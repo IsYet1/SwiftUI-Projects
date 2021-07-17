@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+// TODO: Losing the cancel button when switch to a TabView
 struct ChartsView: View {
     var body: some View {
-        Text("Charts View")
+        TabView {
+            BarChartView()
+            WedgeChartView()
+            RingView()
+        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
     }
 }
 

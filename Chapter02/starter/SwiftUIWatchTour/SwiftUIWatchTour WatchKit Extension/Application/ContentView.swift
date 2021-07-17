@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isPresented = true
     var body: some View {
-        Text("Content View")
+        List {
+            Button("Charts") {
+                self.isPresented.toggle()
+            }.fullScreenCover(isPresented: $isPresented, content: ChartsView.init)
+            NavigationLink(destination: ColorsView()) {
+                Text("Colors")
+            }.navigationTitle("Home")
+        }
     }
 }
 
