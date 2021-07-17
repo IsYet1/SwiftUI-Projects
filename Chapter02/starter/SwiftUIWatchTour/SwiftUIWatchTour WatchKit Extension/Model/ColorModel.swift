@@ -8,3 +8,8 @@
 
 import Foundation
 
+struct ColorModel: Identifiable {
+    var id = UUID()
+    var name: String
+}
+

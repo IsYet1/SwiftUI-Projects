@@ -9,8 +9,23 @@
 import SwiftUI
 
 struct ColorsView: View {
+    @State var colors: [ColorModel] = [
+        ColorModel(name: "Red"),
+        ColorModel(name: "White"),
+        ColorModel(name: "Blue"),
+        ColorModel(name: "Black"),
+        ColorModel(name: "Pink"),
+        ColorModel(name: "Yellow"),
+
+    ]
     var body: some View {
-        Text("Colors View")
+        List {
+            ForEach(colors) {color in
+                NavigationLink(destination: Text(color.name)) {
+                Text(color.name)
+                }
+            }
+        }
     }
 }
 
