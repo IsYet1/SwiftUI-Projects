@@ -11,11 +11,31 @@ import SwiftUI
 struct BarChartView: View {
     var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 0) {
-                Text("Bar").fontWeight(.heavy)
-                Text("CHART").fontWeight(.thin)
-            }
-            .foregroundColor(Color.red)
+            BarHeaderView()
+            BarCapsuleView()
+        }
+    }
+}
+
+struct ShowsView_Previews: PreviewProvider {
+    static var previews: some View {
+        BarChartView()
+    }
+}
+
+struct BarHeaderView: View {
+    var body: some View {
+        HStack(spacing: 0) {
+            Text("Bar").fontWeight(.heavy)
+            Text("CHART").fontWeight(.thin)
+        }
+        .foregroundColor(Color.red)
+    }
+}
+
+struct BarCapsuleView: View {
+    var body: some View {
+        HStack(alignment: .bottom, spacing: 2) {
             VStack(spacing: 2) {
                 Text("99")
                     .font(.system(size: 11))
@@ -31,11 +51,4 @@ struct BarChartView: View {
         }
     }
 }
-
-struct ShowsView_Previews: PreviewProvider {
-    static var previews: some View {
-        BarChartView()
-    }
-}
-
 
