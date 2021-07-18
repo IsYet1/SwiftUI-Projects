@@ -10,8 +10,24 @@ import Foundation
 import SwiftUI
 
 struct WedgeChartView: View {
+    let wedges = [
+        Wedge(startAngle: -43, endAngle: 43, color: Color.blue),
+        Wedge(startAngle: 43, endAngle: 150, color: Color.green),
+        Wedge(startAngle: 150, endAngle: -43, color: Color.red),
+    ]
     var body: some View {
-        Text("Wedge Chart View")
+        VStack {
+            HeaderView(title: "Wedge", subtitle: "Chart")
+            ZStack {
+                ForEach(0 ..< wedges.count) {
+                    WedgeShape(
+                        startAngle: Angle(degrees: self.wedges[$0].startAngle),
+                        endAngle: Angle(degrees: self.wedges[$0].endAngle),
+                        lineWidth: 24
+                    ).foregroundColor(self.wedges[$0].color)
+                }
+            }.frame(width: 140)
+        }
     }
 }
 
