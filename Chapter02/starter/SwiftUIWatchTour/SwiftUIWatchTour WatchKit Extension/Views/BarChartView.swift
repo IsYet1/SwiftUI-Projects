@@ -10,7 +10,25 @@ import SwiftUI
 
 struct BarChartView: View {
     var body: some View {
-        Text("Bar Chart View")
+        VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                Text("Bar").fontWeight(.heavy)
+                Text("CHART").fontWeight(.thin)
+            }
+            .foregroundColor(Color.red)
+            VStack(spacing: 2) {
+                Text("99")
+                    .font(.system(size: 11))
+                    .foregroundColor(Color.gray)
+                Capsule()
+                    .frame(width: 10, height: 100)
+                    .foregroundColor(Color(.red))
+                Text("M")
+                    .font(.system(size: 12))
+                    .fontWeight(.black)
+                    .padding(.top, 0)
+            }
+        }
     }
 }
 
