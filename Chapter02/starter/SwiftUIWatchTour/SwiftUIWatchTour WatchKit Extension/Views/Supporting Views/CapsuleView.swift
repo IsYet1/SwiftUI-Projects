@@ -9,13 +9,28 @@
 import SwiftUI
 
 struct CapsuleView: View {
+    let value: Int
+    let day: String
     var body: some View {
-        Text("Capsule View")
+        HStack(alignment: .bottom, spacing: 2) {
+            VStack(spacing: 2) {
+                Text("\(value)")
+                    .font(.system(size: 11))
+                    .foregroundColor(Color.gray)
+                Capsule()
+                    .frame(width: 10, height: CGFloat(value))
+                    .foregroundColor(Color(.red))
+                Text(day.uppercased())
+                    .font(.system(size: 12))
+                    .fontWeight(.black)
+                    .padding(.top, 0)
+            }
+        }
     }
 }
 
 struct CapsuleView_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleView()
+        CapsuleView(value: 88, day: "D")
     }
 }

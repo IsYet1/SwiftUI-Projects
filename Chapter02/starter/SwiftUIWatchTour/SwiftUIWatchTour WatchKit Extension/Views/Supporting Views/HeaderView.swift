@@ -9,13 +9,20 @@
 import SwiftUI
 
 struct HeaderView: View {
+    let title: String
+    let subtitle: String
+    
     var body: some View {
-        Text("Header View")
+        HStack(spacing: 0) {
+            Text(title).fontWeight(.heavy)
+            Text(subtitle.uppercased()).fontWeight(.thin)
+        }
+        .foregroundColor(Color.red)
     }
 }
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        HeaderView(title: "Bar", subtitle: "CHART")
     }
 }
